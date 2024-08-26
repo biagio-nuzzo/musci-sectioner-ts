@@ -26,6 +26,7 @@ const VideoPlayer = ({
   setAddingVideo,
   video,
   videoList,
+  fullScreenToogle,
 }: VideoPlayerProps) => {
   // Options for the video player
   const opts = {
@@ -124,6 +125,7 @@ const VideoPlayer = ({
         setAddingVideo={setAddingVideo}
         pauseVideo={handleToggleVideo}
         isPaused={isPaused}
+        fullScreenToogle={fullScreenToogle}
       />
     </div>
   );

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 // Libraries
 import { YouTubePlayer } from "react-youtube";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 // Components
 import VideoPlayer from "./components/VideoPlayer";
@@ -31,6 +32,8 @@ const initialVideoList = [
 ];
 
 function App() {
+  const handle = useFullScreenHandle();
+
   // Recupera dati dal local storage
   const dataSection = localStorage.getItem("sectionList") || null;
   const dataSectionJson = dataSection ? JSON.parse(dataSection) : null;
@@ -95,53 +98,56 @@ function App() {
   }, [videoList]);
 
   return (
-    <div className={Style.mainContainer}>
-      {/* Component with the video player */}
-      <VideoPlayer
-        sectionList={sectionList}
-        section={section as number}
-        isPaused={isPaused}
-        restartSection={() => _setSection(section as number)}
-        show={show}
-        setShow={setShow}
-        setAdding={setAdding}
-        setShowVideo={setShowVideo}
-        setAddingVideo={setAddingVideo}
-        video={video}
-        videoList={videoList}
-        setIsPaused={setIsPaused}
-      />
-      {/* Component with the sections */}
-      <Sections
-        sectionList={sectionList}
-        setSection={_setSection}
-        show={show}
-        setShow={setShow}
-        section={section}
-        removeSection={removeSection}
-        videoId={videoList[video].id}
-      />
-      <Videos
-        videoList={videoList}
-        setVideo={_setVideo}
-        showVideo={showVideo}
-        setShowVideo={setShowVideo}
-        video={video}
-        removeVideo={removeVideo}
-      />
-      <AddSection
-        setSectionList={setSectionList}
-        adding={adding}
-        setAdding={setAdding}
-        video={video}
-        videoList={videoList}
-      />
-      <AddVideo
-        setVideoList={setVideoList}
-        addingVideo={addingVideo}
-        setAddingVideo={setAddingVideo}
-      />
-    </div>
+    <FullScreen handle={handle}>
+      <div className={Style.mainContainer}>
+        {/* Component with the video player */}
+        <VideoPlayer
+          sectionList={sectionList}
+          section={section as number}
+          isPaused={isPaused}
+          restartSection={() => _setSection(section as number)}
+          show={show}
+          setShow={setShow}
+          setAdding={setAdding}
+          setShowVideo={setShowVideo}
+          setAddingVideo={setAddingVideo}
+          video={video}
+          videoList={videoList}
+          setIsPaused={setIsPaused}
+          fullScreenToogle={handle}
+        />
+        {/* Component with the sections */}
+        <Sections
+          sectionList={sectionList}
+          setSection={_setSection}
+          show={show}
+          setShow={setShow}
+          section={section}
+          removeSection={removeSection}
+          videoId={videoList[video].id}
+        />
+        <Videos
+          videoList={videoList}
+          setVideo={_setVideo}
+          showVideo={showVideo}
+          setShowVideo={setShowVideo}
+          video={video}
+          removeVideo={removeVideo}
+        />
+        <AddSection
+          setSectionList={setSectionList}
+          adding={adding}
+          setAdding={setAdding}
+          video={video}
+          videoList={videoList}
+        />
+        <AddVideo
+          setVideoList={setVideoList}
+          addingVideo={addingVideo}
+          setAddingVideo={setAddingVideo}
+        />
+      </div>
+    </FullScreen>
   );
 }
 

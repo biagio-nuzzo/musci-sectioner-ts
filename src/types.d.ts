@@ -19,6 +19,7 @@ export type VideoPlayerProps = {
   video: number;
   videoList: Video[];
   setIsPaused: (paused: boolean) => void;
+  fullScreenToogle: any;
 };
 
 export type SectionsProps = {
@@ -40,6 +41,7 @@ export type MenuProps = {
   section: number;
   pauseVideo: (isPaused: boolean) => void;
   isPaused: boolean;
+  fullScreenToogle: any;
 };
 
 export type AddSectionProps = {

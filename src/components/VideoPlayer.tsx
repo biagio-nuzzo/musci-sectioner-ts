@@ -45,7 +45,7 @@ const VideoPlayer = ({
       rel: 0,
     },
   };
-  const videoId = videoList[video].id;
+  const videoId = videoList[video]?.id || "";
 
   // Function to restart the section
   const handleRestartSection = () => {

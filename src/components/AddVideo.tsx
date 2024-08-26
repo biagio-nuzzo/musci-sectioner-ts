@@ -18,11 +18,17 @@ const AddVideo = ({
   // Function to add a new section
   const handleAddVideo = () => {
     if (title && id) {
-      setVideoList((prev) => [...prev, { title, id }]);
+      const videoId = getVideoId(id);
+      setVideoList((prev) => [...prev, { title: title, id: videoId }]);
       setAddingVideo(false);
       setTitle("");
       setId("");
     }
+  };
+
+  const getVideoId = (url: string) => {
+    const urlParams = new URLSearchParams(new URL(url).search);
+    return urlParams.get("v") || "";
   };
 
   return (
@@ -39,24 +45,30 @@ const AddVideo = ({
             Chiudi
           </div>
           <div>
-            <label>Titolo</label>
-            <input
-              type="text"
-              placeholder="Titolo"
-              value={title}
-              onChange={(e) => {
-                setTitle(e.target.value);
-              }}
-            />
-            <label>Id</label>
-            <input
-              type="string"
-              placeholder="Inizio"
-              value={id}
-              onChange={(e) => {
-                setId(e.target.value);
-              }}
-            />
+            <div>
+              <label>Titolo</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Titolo"
+                value={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+              />
+            </div>
+            <div>
+              <label>Youtube Link</label>
+              <br />
+              <input
+                type="string"
+                placeholder="Inizio"
+                value={id}
+                onChange={(e) => {
+                  setId(e.target.value);
+                }}
+              />
+            </div>
             <div
               className={Style.toggleButton}
               onClick={() => {

@@ -72,6 +72,7 @@ function App() {
   };
 
   const removeVideo = (index: number) => {
+    setSection(0);
     setVideoList((prev) => {
       const newList = prev.filter((_, i) => i !== index);
       return newList;
@@ -124,7 +125,7 @@ function App() {
           setShow={setShow}
           section={section}
           removeSection={removeSection}
-          videoId={videoList[video].id}
+          videoId={videoList[video]?.id}
         />
         <Videos
           videoList={videoList}

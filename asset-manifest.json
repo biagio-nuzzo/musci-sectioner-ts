@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/musci-sectioner-ts/static/css/main.8ebb3748.css",
-    "main.js": "/musci-sectioner-ts/static/js/main.6e88d216.js",
+    "main.js": "/musci-sectioner-ts/static/js/main.b0a909d1.js",
     "index.html": "/musci-sectioner-ts/index.html",
     "main.8ebb3748.css.map": "/musci-sectioner-ts/static/css/main.8ebb3748.css.map",
-    "main.6e88d216.js.map": "/musci-sectioner-ts/static/js/main.6e88d216.js.map"
+    "main.b0a909d1.js.map": "/musci-sectioner-ts/static/js/main.b0a909d1.js.map"
   },
   "entrypoints": [
     "static/css/main.8ebb3748.css",
-    "static/js/main.6e88d216.js"
+    "static/js/main.b0a909d1.js"
   ]
 }

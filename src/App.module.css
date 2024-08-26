@@ -1,0 +1,92 @@
+/* Main Container */
+.mainContainer {
+  height: 100vh;
+  background-color: gray;
+  display: flex;
+  position: relative;
+}
+/* End Main Container */
+
+/* Sections */
+.sectionList {
+  background-color: #ededed;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 300px;
+  height: calc(100% - 20px);
+  z-index: 180;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  overflow-y: scroll;
+}
+
+.sectionCard {
+  border: 1px solid black;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+/* End Sections */
+
+/* Video Player */
+.videoPlayer {
+  height: 100%;
+  width: 100%;
+}
+
+.videoPlayer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* End Video Player */
+
+/* Menu */
+.menuContainer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 180;
+}
+.toggleButton {
+  background-color: #ededed;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+/* End Menu */
+
+/* Add Section Menu */
+.addSectionMenu {
+  background-color: #ededed;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 300px;
+  height: calc(100% - 20px);
+  z-index: 180;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+/* End Add Section Menu */
+
+/* Section Bars */
+.sectionBars {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: 10px;
+  z-index: 180;
+  background-color: blue;
+}
+/* End Section Bars */
